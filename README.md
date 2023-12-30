@@ -11,9 +11,9 @@ I'm using the repo description as a GDD because
 
 I want to make a card game - in about 31 hours as of writing this (sleep not included) - and I don't feel like working with humans at the moment, so I'm going alone.
 
-So the plan is to create a simple single-player card game (like Cultist Simulator AKA CS) - but different. I don't like the real-time clocks from CS, as well as how hectic it becomes with scale.
+So the plan is to create a simple single-player card game like Cultist Simulator (aka CS) - but different. I don't like the real-time clocks from CS, as well as how hectic it becomes with scale.
 
-I want this game: making choices and 
+I want this game to be primarily a game about the choices where the player collects information about the game world.
 
 ## How will it be connected to the theme?
 
@@ -29,8 +29,11 @@ All of the above will be connected by the concept of **LOSING** what makes peopl
 
 Game starts with an announcement that "the ritual was successful", and that "you have breached the dream world". The player needs to **FIND** their way to *something*, or risk becoming **LOST** like the countless soles that ventured here before.
 
-The game takes 
+The game takes place in a dream world where time works funny and . 
 
+## Art style
+
+Programmer art in various forms. Animating 2D card movement is a pain so I'll go with 3D cards in a 2D world. Probably flat 2D game world. 2D shader VFX.
 
 ## Core mechanics (needs to work ASAP)
 
@@ -42,8 +45,14 @@ The game takes
 
 - Deck building / drafting - before the game starts the player needs to make choices that define their game deck. Currently I see it as selecting 2-4 groups of around 6-10 cards each that will make the game deck. (it should probably be a blind pick on first run with a "more details" option that allows to see what cards will be added by each choice)
 
+- Movement - not sure if I want keyboard or mouse based movement. Mouse only seems like the best idea for a card game, and makes eventual future adaptation to mobile easier (why the F### am I thinking about future platforms while working on a jam game?!)
+
+- Card holding - a way to keep cards in hand and drag them out of hand / in to stuff
+
 ## Bonus mechanics (stuff that could be cool, but is non-essential
 
 - Fog of war - hide parts of the Board like in an RTS (not visible, gray, visible)
 
 - 4 key stats - I'm thinking something as general as 2 power centric attributes (example offense/defense) and 2 stamina centric attributes (example stamina bar size/stamina bar regeneration)
+
+- Collecting data on opponents - details such as the time period from which they come, likes / dislikes
