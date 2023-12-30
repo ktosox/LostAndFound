@@ -8,15 +8,42 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Card",
+"language": "GDScript",
+"path": "res://stuff/card.gd"
+} ]
+_global_script_class_icons={
+"Card": ""
+}
+
+[addons]
+
+resources_spreadsheet_view/color_rows=true
+resources_spreadsheet_view/color_arrays=true
+resources_spreadsheet_view/array_min_width=128.0
+resources_spreadsheet_view/clip_headers=false
+resources_spreadsheet_view/dupe_arrays=true
+resources_spreadsheet_view/context_menu_on_leftclick=false
+
 [application]
 
 config/name="LostAndFound"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameUi="*res://ui/game_ui.tscn"
+
 [display]
 
 window/size/width=1280
 window/size/height=720
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/resources_speadsheet_view/plugin.cfg" )
 
 [gui]
 

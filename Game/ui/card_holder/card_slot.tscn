@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="CardSlot" type="Control"]
+margin_left = 517.0
+margin_right = 562.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 45, 0 )

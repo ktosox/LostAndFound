@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Experiments/card_mockup.png" type="Texture" id=1]
-[ext_resource path="res://Experiments/card_displayer.gd" type="Script" id=2]
+[ext_resource path="res://experiments/card_mockup.png" type="Texture" id=1]
+[ext_resource path="res://experiments/card_displayer.gd" type="Script" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 1.44, 0.18, 2.56 )
