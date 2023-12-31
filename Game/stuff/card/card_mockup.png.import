@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/card_mockup.png-809bcab258abd5d16ab4f010c2c1ea5a.s3tc.stex"
-path.etc="res://.import/card_mockup.png-809bcab258abd5d16ab4f010c2c1ea5a.etc.stex"
+path.s3tc="res://.import/card_mockup.png-62af32c8c99f69eb1e758d29a8350ba4.s3tc.stex"
+path.etc="res://.import/card_mockup.png-62af32c8c99f69eb1e758d29a8350ba4.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://experiments/card_mockup.png"
-dest_files=[ "res://.import/card_mockup.png-809bcab258abd5d16ab4f010c2c1ea5a.s3tc.stex", "res://.import/card_mockup.png-809bcab258abd5d16ab4f010c2c1ea5a.etc.stex" ]
+source_file="res://stuff/card/card_mockup.png"
+dest_files=[ "res://.import/card_mockup.png-62af32c8c99f69eb1e758d29a8350ba4.s3tc.stex", "res://.import/card_mockup.png-62af32c8c99f69eb1e758d29a8350ba4.etc.stex" ]
 
 [params]
 
