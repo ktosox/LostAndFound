@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stuff/card_holder/card_holder.gd" type="Script" id=2]
+
+[node name="CardHolder" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 657.0
+margin_right = -201.0
+alignment = 1
+script = ExtResource( 2 )
+
+[node name="DebugStuff" type="CanvasLayer" parent="."]
+
+[node name="TestAddCard" type="Button" parent="DebugStuff"]
+margin_left = 884.0
+margin_top = 115.0
+margin_right = 1003.0
+margin_bottom = 201.0
+text = "test add card"
+
+[connection signal="pressed" from="DebugStuff/TestAddCard" to="." method="_on_TestAddCard_pressed"]

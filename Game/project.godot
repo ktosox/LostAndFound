@@ -10,18 +10,18 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "RigidBody2D",
-"class": "Card",
+"class": "HandCard",
 "language": "GDScript",
-"path": "res://stuff/card/card.gd"
+"path": "res://stuff/hand_card/hand_card.gd"
 }, {
 "base": "Resource",
-"class": "CardData",
+"class": "HandCardData",
 "language": "GDScript",
-"path": "res://stuff/card/card_data.gd"
+"path": "res://stuff/hand_card/hand_card_data.gd"
 } ]
 _global_script_class_icons={
-"Card": "",
-"CardData": ""
+"HandCard": "",
+"HandCardData": ""
 }
 
 [addons]

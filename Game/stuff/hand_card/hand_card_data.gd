@@ -1,4 +1,4 @@
-class_name CardData
+class_name HandCardData
 
 extends Resource
 

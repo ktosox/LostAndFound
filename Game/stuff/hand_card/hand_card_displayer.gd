@@ -3,11 +3,12 @@ extends ViewportContainer
 
 onready var last_location = rect_global_position
 
-func load_card_data(data : CardData):
+func load_card_data(data : HandCardData):
 	
 	# use "data" to load visual card stuff
 	
 	pass
+
 
 
 func card_movement_to_tilt(delta:float):

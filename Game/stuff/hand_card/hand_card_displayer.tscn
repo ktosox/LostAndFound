@@ -1,16 +1,19 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://stuff/card/card_mockup.png" type="Texture" id=1]
-[ext_resource path="res://stuff/card/card_displayer.gd" type="Script" id=2]
+[ext_resource path="res://stuff/hand_card/hand_card_displayer.gd" type="Script" id=2]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="StreamTexture" id=4]
+flags = 3
+load_path = "res://.import/card_mockup.png-aed11a0ec091ac6643f26e653dcc5f4b.s3tc.stex"
+
+[sub_resource type="CubeMesh" id=5]
 size = Vector3( 1.44, 0.18, 2.56 )
 
 [sub_resource type="SpatialMaterial" id=2]
 flags_unshaded = true
 albedo_color = Color( 0.0196078, 0.14902, 0.278431, 1 )
 
-[node name="CardDisplayer" type="ViewportContainer"]
+[node name="HandCardDisplayer" type="ViewportContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -100.0
@@ -23,6 +26,7 @@ script = ExtResource( 2 )
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 320, 200 )
+own_world = true
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
@@ -35,7 +39,7 @@ render_target_update_mode = 3
 axis = 1
 double_sided = false
 render_priority = -1
-texture = ExtResource( 1 )
+texture = SubResource( 4 )
 
 [node name="FrontLayer" type="Spatial" parent="Viewport/CardWorld/Body"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0 )
@@ -45,7 +49,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Viewport/CardWorld/Body"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0943525, 0 )
-mesh = SubResource( 1 )
+mesh = SubResource( 5 )
 material/0 = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="Viewport/CardWorld"]
@@ -54,4 +58,4 @@ keep_aspect = 0
 projection = 1
 current = true
 fov = 50.0
-size = 3.591
+size = 3.0
