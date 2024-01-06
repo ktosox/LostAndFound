@@ -17,3 +17,5 @@ margin_top = 25.0
 margin_right = 1256.0
 margin_bottom = 45.0
 text = "options"
+
+[connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]

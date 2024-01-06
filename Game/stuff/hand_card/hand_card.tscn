@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://stuff/hand_card/hand_card.gd" type="Script" id=1]
+[ext_resource path="res://stuff/hand_card/hand_card_displayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://utility/ThisHandlesDrags.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 114 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.0
 
-[node name="HandCard" type="RigidBody2D"]
-mode = 2
+[node name="HandCard" type="RigidBody2D" groups=["HandCard"]]
+collision_layer = 2
+collision_mask = 0
+mode = 3
 mass = 0.4
 gravity_scale = 0.0
 can_sleep = false
@@ -16,6 +19,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="HandCardDisplayer" parent="." instance=ExtResource( 2 )]
 
 [node name="Draggy" parent="." instance=ExtResource( 3 )]
 node_b = NodePath("..")
@@ -26,9 +31,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D" parent="Draggy/GrabbyPart" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [connection signal="dragging" from="Draggy" to="." method="_on_Draggy_dragging"]
+[connection signal="selected" from="Draggy" to="." method="_on_Draggy_selected"]
 
 [editable path="Draggy"]

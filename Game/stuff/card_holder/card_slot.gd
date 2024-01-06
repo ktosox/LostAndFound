@@ -1,14 +1,19 @@
-extends CanvasLayer
+extends Node2D
 
 
+
+
+var assigned_card 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+func assign_card(card:HandCard):
 
+	assigned_card = card
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_tree().paused = true
 	pass # Replace with function body.
 
 
@@ -16,13 +21,3 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-
-func _exit_tree():
-	get_tree().paused = false
-
-
-func _on_Button2_pressed():
-	
-	queue_free()
-	pass # Replace with function body.

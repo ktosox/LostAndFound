@@ -52,11 +52,13 @@ margin_top = 120.0
 margin_right = 210.0
 margin_bottom = 140.0
 size_flags_vertical = 6
-text = "Button"
+text = "Back"
 
 [node name="Button3" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 margin_top = 208.0
 margin_right = 210.0
 margin_bottom = 228.0
 size_flags_vertical = 6
-text = "Button"
+text = "Exit"
+
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]

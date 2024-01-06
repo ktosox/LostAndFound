@@ -1,13 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://stuff/card_holder/card_arrenger.gd" type="Script" id=1]
 [ext_resource path="res://stuff/card_holder/card_holder.gd" type="Script" id=2]
 
-[node name="CardHolder" type="HBoxContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 657.0
-margin_right = -201.0
-alignment = 1
+[node name="CardHolder" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="DebugStuff" type="CanvasLayer" parent="."]
@@ -18,5 +14,9 @@ margin_top = 115.0
 margin_right = 1003.0
 margin_bottom = 201.0
 text = "test add card"
+
+[node name="CardArrenger" type="Node2D" parent="."]
+position = Vector2( 553, 490 )
+script = ExtResource( 1 )
 
 [connection signal="pressed" from="DebugStuff/TestAddCard" to="." method="_on_TestAddCard_pressed"]

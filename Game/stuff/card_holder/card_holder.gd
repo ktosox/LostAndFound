@@ -1,15 +1,23 @@
-extends HBoxContainer
+extends Node2D
 
 var card_slot_scene = preload("./card_slot.tscn") # the scene to which each card is attached
 
+var cards_and_slots = {}
+
 
 func add_card(new_card ):
+	
 	var new_slot = card_slot_scene.instance()
 	new_slot.add_child(new_card)
-	add_child(new_slot)
-	# add it to the holder
-	# attach the card to it
+	cards_and_slots[new_card] = new_slot
+	new_slot.assign_card(new_card)
+	new_slot.global_position = Vector2(global_position.x + cards_and_slots.size() * 90, global_position.y)
+	$CardArrenger.add_child(new_slot)
+	$CardArrenger.update_order()
+
+
 	pass
+
 
 
 # expected behaviour
