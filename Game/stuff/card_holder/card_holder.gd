@@ -12,9 +12,11 @@ func add_card(new_card ):
 	cards_and_slots[new_card] = new_slot
 	new_slot.assign_card(new_card)
 	new_slot.global_position = Vector2(global_position.x + cards_and_slots.size() * 90, global_position.y)
+	
 	$CardArrenger.add_child(new_slot)
-	$CardArrenger.update_order()
-
+	
+	#$CardArrenger.update_order()
+	
 
 	pass
 
