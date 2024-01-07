@@ -8,7 +8,8 @@ func load_card_data(data : HandCardData):
 	# use "data" to load visual card stuff
 	
 	pass
-
+func _ready():
+	$Viewport.own_world = true # 
 
 
 func card_movement_to_tilt(delta:float):

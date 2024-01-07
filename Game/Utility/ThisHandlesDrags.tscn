@@ -25,12 +25,11 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="MouseDetector" type="ColorRect" parent="."]
+[node name="MouseDetector" type="Control" parent="."]
 margin_left = -60.0
 margin_top = -116.0
 margin_right = 61.0
 margin_bottom = 126.0
-color = Color( 1, 1, 1, 0.0941176 )
 
 [connection signal="gui_input" from="MouseDetector" to="." method="_on_MouseDetector_gui_input"]
 [connection signal="mouse_entered" from="MouseDetector" to="." method="_on_MouseDetector_mouse_entered"]

@@ -7,8 +7,6 @@ signal selected(state)
 var drag = false
 
 
-func _ready():
-	$MouseDetector.color = Color(randf(),randf(),randf(),0.4)
 	
 func _physics_process(delta):
 	
