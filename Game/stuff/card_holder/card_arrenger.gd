@@ -1,6 +1,6 @@
 extends Node2D
 
-export var card_spread_distance = 150
+export var card_spread_distance = 170
 
 
 

@@ -15,7 +15,6 @@ func _on_Draggy_dragging(state):
 	# "state" is wether dragging just started or stopped
 	#print("drag state changed: ", state)
 	if !state:
-		mode = RigidBody2D.MODE_KINEMATIC
 		_reset_pos_and_mode()
 
 
@@ -24,7 +23,7 @@ func _on_Draggy_dragging(state):
 func _reset_pos_and_mode():
 	position = Vector2(0,0)
 
-	yield(get_tree().create_timer(0.1), "timeout")
+	#yield(get_tree().create_timer(0.05), "timeout")
 	mode = RigidBody2D.MODE_KINEMATIC
 	pass
 
@@ -38,7 +37,6 @@ func get_selected():
 func get_deselected():
 	z_index = 0
 	modulate = ColorN("white")
-	mode = RigidBody2D.MODE_KINEMATIC
 	_reset_pos_and_mode()
 	
 	pass

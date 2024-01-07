@@ -9,8 +9,7 @@ func load_card_data(data : HandCardData):
 	
 	pass
 func _ready():
-	$Viewport.own_world = true # 
-
+	$Viewport.own_world = true # this has to be here since world can't be own in editor
 
 func card_movement_to_tilt(delta:float):
 	var max_tilt = 0.27
