@@ -17,7 +17,7 @@ margin_bottom = 201.0
 text = "test add card"
 
 [node name="CardArrenger" type="Node2D" parent="."]
-position = Vector2( 553, 490 )
+position = Vector2( 548, 550 )
 script = ExtResource( 1 )
 
 [node name="TestHandCardEater" parent="." instance=ExtResource( 3 )]

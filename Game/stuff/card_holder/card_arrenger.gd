@@ -1,6 +1,6 @@
 extends Node2D
 
-export var card_spread_distance = 170
+export var card_spread_distance = 90
 
 
 
@@ -18,7 +18,7 @@ func update_order():
 
 	for C in get_children():
 		C.position.x = location_array.pop_front()
-		print(C,C.position.x)	
+		#print(C,C.position.x)	
 	pass
 
 

@@ -31,7 +31,10 @@ func add_card(new_card ):
 
 func _on_TestAddCard_pressed():
 	var test_card = load("res://stuff/hand_card/hand_card.tscn").instance() as HandCard
-	
+	var test_card_data = HandCardData.new()
+	test_card_data.value_A = randi() % test_card_data.value_range_A.size()
+	test_card_data.value_B = randi() % test_card_data.value_range_B.size()
 
+	test_card.card_data = test_card_data
 	add_card(test_card)
 	pass # Replace with function body.

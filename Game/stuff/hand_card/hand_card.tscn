@@ -20,7 +20,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="HandCardDisplayer" parent="." instance=ExtResource( 2 )]
+[node name="DisplayHolder" type="Node2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="HandCardDisplayer" parent="DisplayHolder" instance=ExtResource( 2 )]
 margin_right = 220.0
 margin_bottom = 360.0
 

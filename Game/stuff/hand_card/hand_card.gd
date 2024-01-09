@@ -9,11 +9,14 @@ var card_data : HandCardData
 # needs to call load_card_data on CardDisplayer on creation with all of the relvant data
 
 
-
+func _ready():
+	$DisplayHolder/HandCardDisplayer.load_card_data(card_data)
 
 func _on_Draggy_dragging(state):
 	# "state" is wether dragging just started or stopped
 	#print("drag state changed: ", state)
+	if state:
+		mode = RigidBody2D.MODE_CHARACTER
 	if !state:
 		_reset_pos_and_mode()
 
@@ -30,12 +33,14 @@ func _reset_pos_and_mode():
 
 func get_selected():
 	z_index = 2
-	mode = RigidBody2D.MODE_CHARACTER
+	$DisplayHolder.scale = Vector2(1,1)
+	
 	modulate = ColorN("yellow")
 	pass
 
 func get_deselected():
 	z_index = 0
+	$DisplayHolder.scale = Vector2(0.5,0.5)
 	modulate = ColorN("white")
 	_reset_pos_and_mode()
 	

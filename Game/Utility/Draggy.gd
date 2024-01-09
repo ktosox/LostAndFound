@@ -21,9 +21,11 @@ func _input(event):
 			emit_signal("dragging",false)
 			drag = false
 			$GrabbyPart.global_position = global_position
-			if($MouseDetector.get_rect().has_point(get_local_mouse_position())):
+			#
+			
+			if(!$MouseDetector.get_rect().has_point(get_local_mouse_position())):
 				yield(get_tree().create_timer(0.05), "timeout")
-				_on_MouseDetector_mouse_entered()
+				_on_MouseDetector_mouse_exited()
 
 
 
