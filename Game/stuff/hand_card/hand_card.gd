@@ -4,6 +4,8 @@ extends RigidBody2D
 
 var card_data : HandCardData
 
+signal dropped(card)
+
 # needs to swap between Kinewmatic Mode for dragging and Charcter for being held in hand
 
 # needs to call load_card_data on CardDisplayer on creation with all of the relvant data
@@ -18,6 +20,7 @@ func _on_Draggy_dragging(state):
 	if state:
 		mode = RigidBody2D.MODE_CHARACTER
 	if !state:
+		emit_signal("dropped",self)
 		_reset_pos_and_mode()
 
 
@@ -46,7 +49,9 @@ func get_deselected():
 	
 	pass
 
-
+func get_card_data():
+	return card_data
+	pass
 
 
 func _on_Draggy_selected(state):
