@@ -25,8 +25,7 @@ collision_mask = 2
 shape = SubResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="TestHandCardEater"]
-color = Color( 0.643137, 0.509804, 0.815686, 1 )
-polygon = PoolVector2Array( -50, -100, -50, 100, 50, 100, 50, -100 )
+polygon = PoolVector2Array( -50, -100, -217, 54, 50, 100, 215, -72 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 65.0

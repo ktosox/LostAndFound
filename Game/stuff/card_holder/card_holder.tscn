@@ -21,7 +21,13 @@ position = Vector2( 548, 550 )
 script = ExtResource( 1 )
 
 [node name="BoardCard" parent="." instance=ExtResource( 3 )]
-position = Vector2( 336, 185 )
+position = Vector2( 397, 122 )
+
+[node name="BoardCard2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 103, 281 )
+
+[node name="BoardCard3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 601, 241 )
 
 [connection signal="pressed" from="DebugStuff/TestAddCard" to="." method="_on_TestAddCard_pressed"]
 [connection signal="child_entered_tree" from="CardArrenger" to="CardArrenger" method="_on_CardArrenger_child_entered_tree"]

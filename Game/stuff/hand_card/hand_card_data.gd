@@ -3,10 +3,10 @@ class_name HandCardData
 extends Resource
 
 # holds all of the data necessary to create a card from scratch
-enum value_range_A {YELLOW,LIGHTBLUE,PEACHPUFF}
+const value_range_A = ["YELLOW","LIGHTBLUE","PEACHPUFF"]
 
-enum value_range_B {A,B,C,D}
+const value_range_B  = ["A","B","C","D"]
 
-export(value_range_A) var value_A
+var value_A : String
 
-export(value_range_B) var value_B
+var value_B : String

@@ -12,6 +12,7 @@ signal dropped(card)
 
 
 func _ready():
+	modulate = ColorN("gray")
 	$DisplayHolder/HandCardDisplayer.load_card_data(card_data)
 
 func _on_Draggy_dragging(state):
@@ -37,14 +38,14 @@ func _reset_pos_and_mode():
 func get_selected():
 	z_index = 2
 	$DisplayHolder.scale = Vector2(1,1)
+	modulate = ColorN("white")
 	
-	modulate = ColorN("yellow")
 	pass
 
 func get_deselected():
 	z_index = 0
 	$DisplayHolder.scale = Vector2(0.5,0.5)
-	modulate = ColorN("white")
+	modulate = ColorN("gray")
 	_reset_pos_and_mode()
 	
 	pass
