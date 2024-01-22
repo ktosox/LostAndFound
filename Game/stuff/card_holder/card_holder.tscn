@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://stuff/card_holder/card_arrenger.gd" type="Script" id=1]
 [ext_resource path="res://stuff/card_holder/card_holder.gd" type="Script" id=2]
-[ext_resource path="res://experiments/board_card.tscn" type="PackedScene" id=3]
 
 [node name="CardHolder" type="Node2D"]
 script = ExtResource( 2 )
@@ -19,15 +18,6 @@ text = "test add card"
 [node name="CardArrenger" type="Node2D" parent="."]
 position = Vector2( 548, 550 )
 script = ExtResource( 1 )
-
-[node name="BoardCard" parent="." instance=ExtResource( 3 )]
-position = Vector2( 397, 122 )
-
-[node name="BoardCard2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 103, 281 )
-
-[node name="BoardCard3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 601, 241 )
 
 [connection signal="pressed" from="DebugStuff/TestAddCard" to="." method="_on_TestAddCard_pressed"]
 [connection signal="child_entered_tree" from="CardArrenger" to="CardArrenger" method="_on_CardArrenger_child_entered_tree"]
