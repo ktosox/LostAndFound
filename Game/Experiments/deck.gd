@@ -12,8 +12,6 @@ signal end_turn
 
 
 
-func _ready():
-	$DeckCardScreen.visible = false
 
 
 func _on_Deck_pressed():

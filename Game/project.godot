@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "ChoiceData",
+"language": "GDScript",
+"path": "res://stuff/deck_card/choice_data.gd"
+}, {
+"base": "Resource",
 "class": "DeckCardData",
 "language": "GDScript",
 "path": "res://experiments/deck_card_data.gd"
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://stuff/hand_card/hand_card_data.gd"
 } ]
 _global_script_class_icons={
+"ChoiceData": "",
 "DeckCardData": "",
 "HandCard": "",
 "HandCardData": ""
