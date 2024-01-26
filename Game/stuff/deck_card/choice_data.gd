@@ -6,4 +6,8 @@ var ID = -1
 
 var name : String
 
-var text : String
+#var text : String
+
+var value_A : String
+
+var value_B : String

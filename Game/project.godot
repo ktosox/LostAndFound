@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "HandCardData",
 "language": "GDScript",
 "path": "res://stuff/hand_card/hand_card_data.gd"
+}, {
+"base": "Resource",
+"class": "Page",
+"language": "GDScript",
+"path": "res://stuff/deck_card/page.gd"
 } ]
 _global_script_class_icons={
 "ChoiceData": "",
 "DeckCardData": "",
 "HandCard": "",
-"HandCardData": ""
+"HandCardData": "",
+"Page": ""
 }
 
 [addons]

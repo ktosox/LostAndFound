@@ -19,4 +19,8 @@ size_flags_horizontal = 4
 text = "Select"
 
 [node name="CardSocket" parent="." instance=ExtResource( 2 )]
-position = Vector2( 90, 100 )
+visible = false
+position = Vector2( 90, 130 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="unlock" from="CardSocket" to="." method="_on_CardSocket_unlock"]
