@@ -1,10 +1,10 @@
-extends VBoxContainer
+extends ColorRect
 
 
 func load_choice_data(data : ChoiceData):
-	$Label.text = data.text
+	#$Layout.Label.text = data.text
 	
-	$Button.text = data.name
+	$Layout.Button.text = data.name
 	
 	
 	pass

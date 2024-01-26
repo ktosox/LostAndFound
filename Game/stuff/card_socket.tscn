@@ -1,6 +1,71 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://stuff/card_socket.gd" type="Script" id=1]
+[ext_resource path="res://resources/fonts/transformers-movie/Transformers Movie.ttf" type="DynamicFontData" id=2]
 
-[node name="CardSocket" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50, 80 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 61
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 2
+font_data = ExtResource( 2 )
+
+[node name="CardSocket" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( -60, -110, -60, 110, 60, 110, 60, -110 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -16.0
+margin_top = -21.0
+margin_right = 34.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 50, 50 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+text = "1"
+scroll_active = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Glow" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="CPUParticles2D" parent="Glow"]
+position = Vector2( -60, 0 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+amount = 20
+lifetime = 1.5
+preprocess = 2.0
+emission_shape = 3
+emission_points = PoolVector2Array( 0, -80, 0, 80, 0, 0 )
+emission_colors = PoolColorArray(  )
+gravity = Vector2( 0, 0 )
+initial_velocity = 90.0
+scale_amount = 5.0
+
+[node name="Right" type="CPUParticles2D" parent="Glow"]
+position = Vector2( 60, 0 )
+amount = 20
+lifetime = 1.5
+preprocess = 2.0
+emission_shape = 3
+emission_points = PoolVector2Array( 0, -80, 0, 80, 0, 0 )
+emission_colors = PoolColorArray(  )
+gravity = Vector2( 0, 0 )
+initial_velocity = 90.0
+scale_amount = 5.0
+
+[connection signal="body_entered" from="." to="." method="_on_CardSocket_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_CardSocket_body_exited"]

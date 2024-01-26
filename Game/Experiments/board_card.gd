@@ -24,9 +24,6 @@ func load_card_data():
 		$TestHandCardEater/Polygon2D.color = ColorN(value_A)
 	pass
 
-func consume_card(card : HandCard):
-	card.queue_free()
-	pass
 
 func test_set_values():
 	match randi() % 3:

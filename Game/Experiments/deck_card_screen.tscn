@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/fonts/Fibberish v1.0/fibberish.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://experiments/deck_card_screen.gd" type="Script" id=2]
 [ext_resource path="res://stuff/deck_card/choice.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
@@ -9,28 +8,21 @@ size = 32
 extra_spacing_char = 1
 font_data = ExtResource( 1 )
 
-[node name="DeckCardScreen" type="CanvasLayer"]
-script = ExtResource( 2 )
-
-[node name="TopControl" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="EventCard" type="Panel" parent="TopControl"]
-margin_left = 340.0
-margin_top = 110.0
-margin_right = 940.0
-margin_bottom = 610.0
+[node name="EventCard" type="Panel"]
+margin_left = 338.0
+margin_top = -1.0
+margin_right = 938.0
+margin_bottom = 499.0
 rect_min_size = Vector2( 600, 500 )
 
-[node name="Layout" type="VBoxContainer" parent="TopControl/EventCard"]
+[node name="Layout" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
 
-[node name="TextBox" type="RichTextLabel" parent="TopControl/EventCard/Layout"]
+[node name="TextBox" type="RichTextLabel" parent="Layout"]
 margin_right = 600.0
-margin_bottom = 310.0
+margin_bottom = 300.0
 rect_min_size = Vector2( 0, 300 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -54,31 +46,31 @@ ytrt yfghdfghsl;gjd;olgjd
 lgzlkgn z;lgfn"
 scroll_active = false
 
-[node name="Choices" type="HBoxContainer" parent="TopControl/EventCard/Layout"]
-margin_top = 314.0
+[node name="Choices" type="HBoxContainer" parent="Layout"]
+margin_top = 304.0
 margin_right = 600.0
 margin_bottom = 500.0
 rect_min_size = Vector2( 90, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.6
+size_flags_stretch_ratio = 0.8
 alignment = 1
 
-[node name="Choice" parent="TopControl/EventCard/Layout/Choices" instance=ExtResource( 3 )]
-margin_left = 0.0
-margin_right = 600.0
+[node name="Choice" parent="Layout/Choices" instance=ExtResource( 3 )]
+margin_left = 8.0
+margin_right = 188.0
+margin_bottom = 196.0
 
-[node name="Button" parent="TopControl/EventCard/Layout/Choices/Choice" index="0"]
-margin_left = 274.0
-margin_right = 325.0
+[node name="Choice2" parent="Layout/Choices" instance=ExtResource( 3 )]
+margin_left = 209.0
+margin_right = 389.0
+margin_bottom = 196.0
 
-[node name="Label" parent="TopControl/EventCard/Layout/Choices/Choice" index="1"]
-margin_right = 600.0
-margin_bottom = 55.0
+[node name="Choice3" parent="Layout/Choices" instance=ExtResource( 3 )]
+margin_left = 411.0
+margin_right = 591.0
+margin_bottom = 196.0
 
-[node name="ColorRect" parent="TopControl/EventCard/Layout/Choices/Choice" index="2"]
-margin_left = 250.0
-margin_top = 59.0
-margin_right = 350.0
-
-[editable path="TopControl/EventCard/Layout/Choices/Choice"]
+[editable path="Layout/Choices/Choice"]
+[editable path="Layout/Choices/Choice2"]
+[editable path="Layout/Choices/Choice3"]

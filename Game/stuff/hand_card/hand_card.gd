@@ -6,6 +6,8 @@ var card_data : HandCardData
 
 signal dropped(card)
 
+var drop_override : FuncRef 
+
 # needs to swap between Kinewmatic Mode for dragging and Charcter for being held in hand
 
 # needs to call load_card_data on CardDisplayer on creation with all of the relvant data
@@ -17,15 +19,15 @@ func _ready():
 
 func _on_Draggy_dragging(state):
 	# "state" is wether dragging just started or stopped
-	#print("drag state changed: ", state)
 	if state:
 		mode = RigidBody2D.MODE_CHARACTER
 	if !state:
-		emit_signal("dropped",self)
-		_reset_pos_and_mode()
+		if drop_override != null:
+			drop_override.call_func(self)
+		else:
+			emit_signal("dropped",self)
+			_reset_pos_and_mode()
 
-
-	pass # Replace with function body.
 
 func _reset_pos_and_mode():
 	position = Vector2(0,0)

@@ -16,7 +16,7 @@ margin_bottom = 201.0
 text = "test add card"
 
 [node name="CardArrenger" type="Node2D" parent="."]
-position = Vector2( 548, 550 )
+position = Vector2( 540, 612 )
 script = ExtResource( 1 )
 
 [connection signal="pressed" from="DebugStuff/TestAddCard" to="." method="_on_TestAddCard_pressed"]
