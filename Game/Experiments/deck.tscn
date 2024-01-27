@@ -10,7 +10,6 @@ text = "END TURN & DRAW CARD"
 script = ExtResource( 1 )
 
 [node name="EventCard" parent="." instance=ExtResource( 2 )]
-margin_left = 327.0
-margin_right = 927.0
+visible = false
 
 [connection signal="pressed" from="." to="." method="_on_Deck_pressed"]

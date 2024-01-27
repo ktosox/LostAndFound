@@ -13,14 +13,15 @@ var value_B # value_range_B  = ["A","B","C","D"]
 
 var card_drop_ref : FuncRef
 
+var disabled = false
 
 func _ready():
 	card_drop_ref = FuncRef.new()
 	card_drop_ref.function = "consume_card"
 	card_drop_ref.set_instance(self)
 	randomize()
-	test_set_values()
-	update_shown_values()
+	#test_set_values()
+	#update_shown_values()
 
 func update_shown_values():
 	if value_B != null:
@@ -50,6 +51,7 @@ func test_set_values():
 
 func consume_card(card : HandCard):
 	card.queue_free()
+	emit_signal("unlock")
 	pass
 
 func _on_TestHandCardEater_body_exited(body):
@@ -58,7 +60,7 @@ func _on_TestHandCardEater_body_exited(body):
 
 
 func is_card_valid(card_data : HandCardData):
-	var result = true
+	var result = !disabled
 	if value_B != null:
 		if card_data.value_B != value_B:
 			result = false

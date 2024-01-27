@@ -10,11 +10,13 @@ signal end_turn
 
 # loads card on to deck card screen
 
+
+
 var deck_card_data : DeckCardData
 
 func _ready():
 	test_load_deck_card_data()
-	$EventCard.load_page_data(deck_card_data.pages[0])
+	
 	var change_page = FuncRef.new()
 	change_page.function = "process_page_change"
 	change_page.set_instance(self)
@@ -44,7 +46,7 @@ func process_page_change(ID):
 	print("processing cahnge to page ",ID)
 	if ID == -1:
 		print(" ze End")
-		$EventCard.queue_free()
+		$EventCard.visible = false
 		return
 	$EventCard.load_page_data(deck_card_data.pages[ID])
 	
@@ -53,7 +55,8 @@ func process_page_change(ID):
 func _on_Deck_pressed():
 	
 	emit_signal("end_turn")
-	
+	$EventCard.visible = true
+	$EventCard.load_page_data(deck_card_data.pages[0])
 	# get next card data
 	
 	
