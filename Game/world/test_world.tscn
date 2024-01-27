@@ -2,7 +2,7 @@
 
 [ext_resource path="res://world/test_world.gd" type="Script" id=1]
 [ext_resource path="res://stuff/card_holder/card_holder.tscn" type="PackedScene" id=2]
-[ext_resource path="res://experiments/deck.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stuff/deck_card/deck.tscn" type="PackedScene" id=3]
 
 [node name="TestWorld" type="Node2D"]
 script = ExtResource( 1 )

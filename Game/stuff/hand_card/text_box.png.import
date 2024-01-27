@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/eye_64x64.png-79973104999ce055356a854f2fd191fa.s3tc.stex"
-path.etc="res://.import/eye_64x64.png-79973104999ce055356a854f2fd191fa.etc.stex"
+path.s3tc="res://.import/text_box.png-a79fd17cf402c580e759730a45a530ae.s3tc.stex"
+path.etc="res://.import/text_box.png-a79fd17cf402c580e759730a45a530ae.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://experiments/icons_64_x_64/eye_64x64.png"
-dest_files=[ "res://.import/eye_64x64.png-79973104999ce055356a854f2fd191fa.s3tc.stex", "res://.import/eye_64x64.png-79973104999ce055356a854f2fd191fa.etc.stex" ]
+source_file="res://stuff/hand_card/text_box.png"
+dest_files=[ "res://.import/text_box.png-a79fd17cf402c580e759730a45a530ae.s3tc.stex", "res://.import/text_box.png-a79fd17cf402c580e759730a45a530ae.etc.stex" ]
 
 [params]
 
@@ -21,12 +21,12 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=true
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

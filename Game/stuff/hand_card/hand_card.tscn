@@ -2,7 +2,7 @@
 
 [ext_resource path="res://stuff/hand_card/hand_card.gd" type="Script" id=1]
 [ext_resource path="res://stuff/hand_card/hand_card_displayer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://utility/ThisHandlesDrags.tscn" type="PackedScene" id=3]
+[ext_resource path="res://resources/utility/ThisHandlesDrags.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.0

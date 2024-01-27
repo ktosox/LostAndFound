@@ -15,6 +15,8 @@ func _ready():
 # if card is valid -> connect it's "dropped" signal to a function that consumes it
 # once dropped -> consume
 # if card leaves recepticle -> detach signal from fucntion
+
+
 func load_card_data():
 	if value_B != null:
 		$RichTextLabel.text = value_B

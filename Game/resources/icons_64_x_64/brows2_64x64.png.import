@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/triangle_64x64.png-8c4e2b9b8db35e9d889d347aa62b7bdd.s3tc.stex"
-path.etc="res://.import/triangle_64x64.png-8c4e2b9b8db35e9d889d347aa62b7bdd.etc.stex"
+path.s3tc="res://.import/brows2_64x64.png-f71f5dd36a3965efb33bd0fa4b5bda41.s3tc.stex"
+path.etc="res://.import/brows2_64x64.png-f71f5dd36a3965efb33bd0fa4b5bda41.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://experiments/icons_64_x_64/triangle_64x64.png"
-dest_files=[ "res://.import/triangle_64x64.png-8c4e2b9b8db35e9d889d347aa62b7bdd.s3tc.stex", "res://.import/triangle_64x64.png-8c4e2b9b8db35e9d889d347aa62b7bdd.etc.stex" ]
+source_file="res://resources/icons_64_x_64/brows2_64x64.png"
+dest_files=[ "res://.import/brows2_64x64.png-f71f5dd36a3965efb33bd0fa4b5bda41.s3tc.stex", "res://.import/brows2_64x64.png-f71f5dd36a3965efb33bd0fa4b5bda41.etc.stex" ]
 
 [params]
 

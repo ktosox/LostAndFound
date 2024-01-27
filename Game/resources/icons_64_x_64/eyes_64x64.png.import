@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/full_144_256.png-c5b52e388c6ddffd6a0a7da4e2cb3bc9.s3tc.stex"
-path.etc="res://.import/full_144_256.png-c5b52e388c6ddffd6a0a7da4e2cb3bc9.etc.stex"
+path.s3tc="res://.import/eyes_64x64.png-cfc2fce82be63af443827ac532438b15.s3tc.stex"
+path.etc="res://.import/eyes_64x64.png-cfc2fce82be63af443827ac532438b15.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://experiments/full_144_256.png"
-dest_files=[ "res://.import/full_144_256.png-c5b52e388c6ddffd6a0a7da4e2cb3bc9.s3tc.stex", "res://.import/full_144_256.png-c5b52e388c6ddffd6a0a7da4e2cb3bc9.etc.stex" ]
+source_file="res://resources/icons_64_x_64/eyes_64x64.png"
+dest_files=[ "res://.import/eyes_64x64.png-cfc2fce82be63af443827ac532438b15.s3tc.stex", "res://.import/eyes_64x64.png-cfc2fce82be63af443827ac532438b15.etc.stex" ]
 
 [params]
 
@@ -21,12 +21,12 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=true
 flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

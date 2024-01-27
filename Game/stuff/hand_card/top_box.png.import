@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/middle_bar.png-dbb90665818d748f3f2cbe966ee2d01d.s3tc.stex"
-path.etc="res://.import/middle_bar.png-dbb90665818d748f3f2cbe966ee2d01d.etc.stex"
+path.s3tc="res://.import/top_box.png-9b84deec6fae117297f3c5d36a86f32a.s3tc.stex"
+path.etc="res://.import/top_box.png-9b84deec6fae117297f3c5d36a86f32a.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://experiments/middle_bar.png"
-dest_files=[ "res://.import/middle_bar.png-dbb90665818d748f3f2cbe966ee2d01d.s3tc.stex", "res://.import/middle_bar.png-dbb90665818d748f3f2cbe966ee2d01d.etc.stex" ]
+source_file="res://stuff/hand_card/top_box.png"
+dest_files=[ "res://.import/top_box.png-9b84deec6fae117297f3c5d36a86f32a.s3tc.stex", "res://.import/top_box.png-9b84deec6fae117297f3c5d36a86f32a.etc.stex" ]
 
 [params]
 
