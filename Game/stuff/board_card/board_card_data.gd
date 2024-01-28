@@ -6,4 +6,8 @@ var name : String
 
 var text : String
 
+var life_time : int
+
 var choices : Array
+
+

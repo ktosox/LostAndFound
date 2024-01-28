@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://resources/fonts/Fibberish v1.0/fibberish.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://stuff/deck_card/deck_card_screen.gd" type="Script" id=2]
-[ext_resource path="res://stuff/deck_card/choice.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stuff/deck_card/deck_card.gd" type="Script" id=2]
+[ext_resource path="res://stuff/choice/choice.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
 extra_spacing_char = 1
 font_data = ExtResource( 1 )
 
-[node name="EventCard" type="Panel"]
+[node name="DeckCard" type="Panel"]
 margin_left = 338.0
 margin_right = 938.0
 margin_bottom = 500.0
@@ -66,9 +66,9 @@ margin_left = 411.0
 margin_right = 591.0
 margin_bottom = 261.0
 
-[connection signal="choice_selected" from="Choices/Choice" to="." method="choice_processing"]
-[connection signal="choice_selected" from="Choices/Choice2" to="." method="choice_processing"]
-[connection signal="choice_selected" from="Choices/Choice3" to="." method="choice_processing"]
+[connection signal="choice_selected" from="Choices/Choice" to="." method="process_page_change"]
+[connection signal="choice_selected" from="Choices/Choice2" to="." method="process_page_change"]
+[connection signal="choice_selected" from="Choices/Choice3" to="." method="process_page_change"]
 
 [editable path="Choices/Choice"]
 [editable path="Choices/Choice2"]

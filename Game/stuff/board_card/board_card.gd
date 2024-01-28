@@ -4,14 +4,22 @@ extends RigidBody2D
 
 var card_data : BoardCardData
 
+var process_choice_ref : FuncRef
+
+var life_time : int
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#test_set_values()
 	#load_card_data(card_data)
 	load_card_data(card_data)
+	update_remaining_time(life_time)
 	pass # Replace with function body.
 
 
+func choice_processing(ID):
+	process_choice_ref.call_func(ID)
+	pass
 
 func load_card_data(card_data : BoardCardData):
 	$TextBox.text = card_data.text
@@ -28,6 +36,19 @@ func load_card_data(card_data : BoardCardData):
 		loaded_choice.visible = true
 		choice_count += 1
 
+func update_remaining_time(time : int):
+	$RemainingTime.text = "Time left: " + String(time)
+	pass
+
+func end_of_turn():
+	if life_time < 0 :
+		return
+	if life_time == 0 :
+		print("resolve board card")
+	life_time = life_time - 1
+	update_remaining_time(life_time)
+	
+	pass
 
 func test_set_values():
 	card_data = BoardCardData.new()

@@ -1,6 +1,5 @@
 extends Button
 
-signal end_turn
 
 # keeps track od deck data
 
@@ -10,11 +9,7 @@ signal end_turn
 
 # loads card on to deck card screen
 
-var create_hand_card_ref : FuncRef
 
-var create_board_card_ref : FuncRef
-
-var deck_card_data : DeckCardData
 
 func _ready():
 	test_load_deck_card_data()
@@ -34,7 +29,7 @@ func test_load_deck_card_data():
 	var raw_data = file.get_csv_line(";")
 	while raw_data.size() > 1:
 		
-		load_page(raw_data)
+		raw_data_to_page(raw_data)
 
 		
 		raw_data = file.get_csv_line(";")
@@ -44,18 +39,18 @@ func test_load_deck_card_data():
 	file.close()
 	pass
 
-func load_page(page_data : Array):
+func raw_data_to_page(raw_data : Array):
 	var new_page = Page.new()
-	new_page.ID = page_data.pop_front().to_int()
-	new_page.text = page_data.pop_front()
+	new_page.ID = raw_data.pop_front().to_int()
+	new_page.text = raw_data.pop_front()
 	
-	while page_data.size() > 0:
-		if page_data[0] != " ":
+	while raw_data.size() > 0:
+		if raw_data[0] != " ":
 			
 			var new_choice = ChoiceData.new()
-			new_choice.name = page_data.pop_front()
-			new_choice.ID = page_data.pop_front().to_int()
-			var card_values = page_data.pop_front()
+			new_choice.name = raw_data.pop_front()
+			new_choice.ID = raw_data.pop_front().to_int()
+			var card_values = raw_data.pop_front()
 			if card_values.is_valid_filename(): # haHAhaahHAHaha
 				card_values = card_values.split("-")
 				

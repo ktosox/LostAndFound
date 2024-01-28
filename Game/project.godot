@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "ChoiceData",
 "language": "GDScript",
-"path": "res://stuff/deck_card/choice_data.gd"
+"path": "res://stuff/choice/choice_data.gd"
 }, {
 "base": "Resource",
 "class": "DeckCardData",

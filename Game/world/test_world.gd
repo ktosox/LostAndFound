@@ -19,8 +19,8 @@ func _ready():
 	$BoardCardHolder.create_hand_card_ref = create_hand_card_ref
 	$BoardCardHolder.create_board_card_ref = create_board_card_ref
 	
-	$Deck.create_hand_card_ref = create_hand_card_ref
-	$Deck.create_board_card_ref = create_board_card_ref
+	$DeckCard.create_hand_card_ref = create_hand_card_ref
+	$DeckCard.create_board_card_ref = create_board_card_ref
 	pass
 	
 
@@ -30,7 +30,7 @@ func create_hand_card(card_data : HandCardData):
 	new_card.card_data = card_data
 
 	
-	$CardHolder.add_card(new_card)
+	$HandCardHolder.add_card(new_card)
 	pass
 
 
@@ -40,3 +40,13 @@ func carete_board_card(card_data : BoardCardData):
 	#print("Baord Card LUL")
 	$BoardCardHolder.add_card(new_card)
 	pass
+
+
+func process_end_of_turn():
+	for stuff in get_tree().get_nodes_in_group("EndOfTurn"):
+		stuff.end_of_turn()
+	pass
+
+
+func _on_EndTurn_pressed():
+	pass # Replace with function body.

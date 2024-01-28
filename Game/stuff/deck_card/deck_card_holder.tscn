@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://stuff/deck_card/deck.gd" type="Script" id=1]
-[ext_resource path="res://stuff/deck_card/deck_card_screen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://stuff/deck_card/deck_card_holder.gd" type="Script" id=1]
+[ext_resource path="res://stuff/deck_card/deck_card.tscn" type="PackedScene" id=2]
 
-[node name="Deck" type="Button"]
+[node name="DeckCardHolder" type="Button"]
 margin_right = 113.0
 margin_bottom = 86.0
 text = "END TURN & DRAW CARD"

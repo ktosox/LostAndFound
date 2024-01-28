@@ -17,6 +17,8 @@ func add_card(new_card : BoardCard):
 	pass
 
 
+
+
 func _on_Button_pressed():
 	
 	# test stuff starts

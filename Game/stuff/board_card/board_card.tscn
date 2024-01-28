@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://stuff/board_card/board_card.gd" type="Script" id=1]
 [ext_resource path="res://resources/fonts/Fibberish v1.0/fibberish.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://stuff/deck_card/choice.tscn" type="PackedScene" id=4]
+[ext_resource path="res://stuff/choice/choice.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
@@ -12,10 +12,41 @@ extra_spacing_top = 4
 font_data = ExtResource( 2 )
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 101.0
-height = 325.0
+radius = 100.0
+height = 313.0
 
-[node name="BoardCard" type="RigidBody2D"]
+[sub_resource type="Animation" id=4]
+resource_name = "New Anim"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ 0.01, 100.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 100.0 ]
+}
+
+[node name="BoardCard" type="RigidBody2D" groups=["EndOfTurn"]]
 collision_layer = 8
 collision_mask = 8
 mode = 2
@@ -55,3 +86,15 @@ margin_bottom = 58.0
 position = Vector2( -73.5, -4 )
 rotation = 1.5708
 shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape2D"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+
+[node name="RemainingTime" type="Label" parent="."]
+margin_left = 56.0
+margin_top = 76.0
+margin_right = 96.0
+margin_bottom = 90.0
+text = "dgdgdfgdfg"
