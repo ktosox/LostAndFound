@@ -6,12 +6,11 @@ var create_board_card_ref : FuncRef
 
 var deck_card_data : DeckCardData
 
-func _ready():
-	test_load_deck_card_data()
-	load_page_data(deck_card_data.pages[0])
+signal story_finished
+
 
 func load_page_data(page_data : Page):
-	
+	visible = true
 	$TextBox.text = page_data.text
 	
 	for choice in $Choices.get_children():
@@ -29,10 +28,10 @@ func load_page_data(page_data : Page):
 	pass
 
 
-func test_load_deck_card_data():
+func load_story(story = "test_story"):
 	deck_card_data = DeckCardData.new()
 	var file = File.new()
-	file.open("res://resources/stories/test_story.csv", File.READ)
+	file.open("res://resources/stories/"+story+".csv", File.READ)
 	
 
 	file.get_csv_line()
@@ -47,9 +46,12 @@ func test_load_deck_card_data():
 	
 
 	file.close()
-	pass
+	load_page_data(deck_card_data.pages[0])
+
+
 
 func raw_data_to_page(raw_data : Array):
+	# instead of popping each value like an animal I should refer to values by their postions
 	var new_page = Page.new()
 	new_page.ID = raw_data.pop_front().to_int()
 	new_page.text = raw_data.pop_front()
@@ -77,9 +79,11 @@ func raw_data_to_page(raw_data : Array):
 
 func process_page_change(ID):
 	print("processing cahnge to page ",ID)
+	
+	
 	if ID == -1:
-		print(" ze End")
-		# card creation stuff should go here
+		emit_signal("story_finished")
+		
 		visible = false
 		return
 	load_page_data(deck_card_data.pages[ID])

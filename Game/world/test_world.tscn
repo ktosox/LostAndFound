@@ -19,9 +19,11 @@ margin_bottom = 263.0
 text = "END TURN & DRAW CARD"
 
 [node name="DeckCard" parent="." instance=ExtResource( 3 )]
+visible = false
 margin_left = 412.0
 margin_top = 2.0
 margin_right = 1012.0
 margin_bottom = 502.0
 
 [connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
+[connection signal="story_finished" from="DeckCard" to="." method="_on_DeckCard_story_finished"]

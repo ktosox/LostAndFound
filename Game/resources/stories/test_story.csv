@@ -1,4 +1,4 @@
-ID;Page_Text;Choice1_Text;Choice1_ID;Choice1_Card;Choice2_Text;Choice2_ID;Choice2_Card;Choice3_Text;Choice3_ID;Choice3_Card
+﻿ID;Page_Text;Choice1_Text;Choice1_ID;Choice1_Card;Choice2_Text;Choice2_ID;Choice2_Card;Choice3_Text;Choice3_ID;Choice3_Card
 0;abcd;ABC;1;1-2;DEF;4;2-2;BVC;6;
 1;efgh;BFR;4;0-2;POI;-1;;;;
 4;edfg;DFG;-1;;;;;;;
