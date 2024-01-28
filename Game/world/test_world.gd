@@ -1,16 +1,42 @@
 extends Node2D
 
+var hand_card_scene = load("res://stuff/hand_card/hand_card.tscn")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var board_card_scene = load("res://stuff/board_card/board_card.tscn")
 
 
-# Called when the node enters the scene tree for the first time.
+var create_hand_card_ref = FuncRef.new()
+
+var create_board_card_ref = FuncRef.new()
+
 func _ready():
-	pass # Replace with function body.
+	
+	create_hand_card_ref.set_instance(self)
+	create_hand_card_ref.function = "create_hand_card"
+	create_board_card_ref.set_instance(self)
+	create_board_card_ref.function = "carete_board_card"
+	
+	$BoardCardHolder.create_hand_card_ref = create_hand_card_ref
+	$BoardCardHolder.create_board_card_ref = create_board_card_ref
+	
+	$Deck.create_hand_card_ref = create_hand_card_ref
+	$Deck.create_board_card_ref = create_board_card_ref
+	pass
+	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func create_hand_card(card_data : HandCardData):
+	var new_card = hand_card_scene.instance() as HandCard
+	new_card.card_data = card_data
+
+	
+	$CardHolder.add_card(new_card)
+	pass
+
+
+func carete_board_card(card_data : BoardCardData):
+	var new_card = board_card_scene.instance() as BoardCard
+	new_card.card_data = card_data
+	#print("Baord Card LUL")
+	$BoardCardHolder.add_card(new_card)
+	pass

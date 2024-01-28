@@ -10,7 +10,9 @@ signal end_turn
 
 # loads card on to deck card screen
 
+var create_hand_card_ref : FuncRef
 
+var create_board_card_ref : FuncRef
 
 var deck_card_data : DeckCardData
 
@@ -73,9 +75,19 @@ func process_page_change(ID):
 	print("processing cahnge to page ",ID)
 	if ID == -1:
 		print(" ze End")
+		# card creation stuff should go here
 		$EventCard.visible = false
 		return
 	$EventCard.load_page_data(deck_card_data.pages[ID])
+	
+		# test stuff starts here
+	var test_card_data = HandCardData.new()
+	test_card_data.value_A = test_card_data.value_range_A[randi() % test_card_data.value_range_A.size()]
+	test_card_data.value_B = test_card_data.value_range_B[randi() % test_card_data.value_range_B.size()]
+	create_hand_card_ref.call_func(test_card_data)
+	
+	# test stuff ends here
+	
 	
 	pass
 

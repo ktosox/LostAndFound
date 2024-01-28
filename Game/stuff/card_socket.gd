@@ -35,15 +35,7 @@ func update_shown_values():
 		$Polygon2D.color = ColorN("White")
 	pass
 
-func test_set_values():
-	match randi() % 3:
-		0:
-			value_A = HandCardData.value_range_A[randi() % HandCardData.value_range_A.size()]
-		1:
-			value_B = HandCardData.value_range_B[randi() % HandCardData.value_range_B.size()]
-		2:
-			value_A = HandCardData.value_range_A[randi() % HandCardData.value_range_A.size()]
-			value_B = HandCardData.value_range_B[randi() % HandCardData.value_range_B.size()]
+
 
 	
 	

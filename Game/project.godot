@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "BoardCard",
+"language": "GDScript",
+"path": "res://stuff/board_card/board_card.gd"
+}, {
 "base": "Resource",
 "class": "BoardCardData",
 "language": "GDScript",
@@ -40,6 +45,7 @@ _global_script_classes=[ {
 "path": "res://stuff/deck_card/page.gd"
 } ]
 _global_script_class_icons={
+"BoardCard": "",
 "BoardCardData": "",
 "ChoiceData": "",
 "DeckCardData": "",

@@ -22,13 +22,11 @@ func load_choice_data(data : ChoiceData):
 
 
 func _on_Button_pressed():
-	print("unlock 1")
 	emit_signal("choice_selected",ID)
 	
 	pass # Replace with function body.
 
 
 func _on_CardSocket_unlock():
-	print("unlock 2")
 	emit_signal("choice_selected",ID)
 	pass # Replace with function body.
