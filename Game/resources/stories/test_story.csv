@@ -1,5 +1,5 @@
-﻿ID;Page_Text;Choice1_Text;Choice1_ID;Choice1_Card;Choice2_Text;Choice2_ID;Choice2_Card;Choice3_Text;Choice3_ID;Choice3_Card
-0;abcd;ABC;1;1-2;DEF;4;2-2;BVC;6;
-1;efgh;BFR;4;0-2;POI;-1;;;;
-4;edfg;DFG;-1;;;;;;;
-6;gfdgdg;UYT;-1;;;;;;;
+ID;Page_Text;Choice1_Text;Choice1_ID;Choice1_Card;Choice1_Effect;Choice2_Text;Choice2_ID;Choice2_Card;Choice2_Effect;Choice3_Text;Choice3_ID;Choice3_Card;Choice3_Effect
+0;Welcome to my forest! Would you like to get a card?;Yes, I would love one!;1;;random_hand_card;I would rather not...;4;;;;;;
+1;That's the attitude! I got one of these, and one of these...;I changed my mind, I don't want a card.;4;;;Get a random board card;6;;;;;;
+4;Well too bad! Cause you are getting one, whether you like it or not!;Get a random hand card;6;;random_hand_card;;;;;;;;
+6;Now get out of my forest! ;Leave the forest;-1;;;;;;;;;;

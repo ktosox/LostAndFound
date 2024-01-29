@@ -2,11 +2,14 @@ extends ColorRect
 
 var ID
 
-signal choice_selected(ID)
+var effect 
+
+signal choice_selected(ID,effect)
 
 func load_choice_data(data : ChoiceData):
 	#$Layout.Label.text = data.text
 	ID = data.ID
+	effect = data.effect
 	$Button.text = data.name
 	$Button.disabled = false
 	$CardSocket.visible = false
@@ -22,11 +25,11 @@ func load_choice_data(data : ChoiceData):
 
 
 func _on_Button_pressed():
-	emit_signal("choice_selected",ID)
+	emit_signal("choice_selected",ID,effect)
 	
 	pass # Replace with function body.
 
 
 func _on_CardSocket_unlock():
-	emit_signal("choice_selected",ID)
+	emit_signal("choice_selected",ID,effect)
 	pass # Replace with function body.

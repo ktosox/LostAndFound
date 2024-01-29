@@ -66,9 +66,9 @@ margin_left = 411.0
 margin_right = 591.0
 margin_bottom = 261.0
 
-[connection signal="choice_selected" from="Choices/Choice" to="." method="process_page_change"]
-[connection signal="choice_selected" from="Choices/Choice2" to="." method="process_page_change"]
-[connection signal="choice_selected" from="Choices/Choice3" to="." method="process_page_change"]
+[connection signal="choice_selected" from="Choices/Choice" to="." method="process_choice"]
+[connection signal="choice_selected" from="Choices/Choice2" to="." method="process_choice"]
+[connection signal="choice_selected" from="Choices/Choice3" to="." method="process_choice"]
 
 [editable path="Choices/Choice"]
 [editable path="Choices/Choice2"]

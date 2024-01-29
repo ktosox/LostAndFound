@@ -11,7 +11,8 @@ signal story_finished
 
 func load_page_data(page_data : Page):
 	visible = true
-	$TextBox.text = page_data.text
+	enable()
+	$TextBox.bbcode_text = "[center]" + page_data.text
 	
 	for choice in $Choices.get_children():
 		choice.visible = false
@@ -51,22 +52,33 @@ func load_story(story = "test_story"):
 
 
 func raw_data_to_page(raw_data : Array):
-	# instead of popping each value like an animal I should refer to values by their postions
+
 	var new_page = Page.new()
-	new_page.ID = raw_data.pop_front().to_int()
-	new_page.text = raw_data.pop_front()
-	
-	while raw_data.size() > 0:
-		if raw_data[0] != " ":
+	new_page.ID = raw_data[0].to_int()
+	new_page.text = raw_data[1]
+	var choice_data_length = 4
+	var choices_done = 0
+	var start_offset = 2
+	while choices_done < 3:
+		choices_done += 1
+		
+
+		var raw_choice_data = raw_data.slice(start_offset + choice_data_length * (choices_done-1),start_offset + choice_data_length * choices_done)
+
+		if raw_choice_data[0] != " ":
 			
 			var new_choice = ChoiceData.new()
-			new_choice.name = raw_data.pop_front()
-			new_choice.ID = raw_data.pop_front().to_int()
-			var card_values = raw_data.pop_front()
+			new_choice.name = raw_choice_data[0]
+			new_choice.effect = raw_choice_data[3]
+			new_choice.ID = raw_choice_data[1].to_int()
+
+				
+			
+			var card_values = raw_choice_data[2]
 			if card_values.is_valid_filename(): # haHAhaahHAHaha
 				card_values = card_values.split("-")
 				
-				#print(HandCardData.value_range_A[card_values[0].to_int()] ,HandCardData.value_range_B[card_values[1].to_int()] )
+
 				
 				new_choice.value_A = HandCardData.value_range_A[card_values[0].to_int()] 
 				new_choice.value_B = HandCardData.value_range_B[card_values[0].to_int()] 
@@ -77,6 +89,39 @@ func raw_data_to_page(raw_data : Array):
 	deck_card_data.pages[new_page.ID] = new_page
 
 
+func process_choice(ID,effect):
+	
+	# effect stuff goes here
+	match effect:
+		" ":
+			return
+		"random_hand_card":
+			
+# test stuff starts here
+			var test_card_data = HandCardData.new()
+			test_card_data.value_A = test_card_data.value_range_A[randi() % test_card_data.value_range_A.size()]
+			test_card_data.value_B = test_card_data.value_range_B[randi() % test_card_data.value_range_B.size()]
+			create_hand_card_ref.call_func(test_card_data)
+# test stuff ends here
+
+			pass
+		"random_board_card":
+			pass
+
+	
+	
+	process_page_change(ID)
+	
+	pass
+
+func disable():
+	# make the card sockets and other stuff diabled
+	pass
+
+func enable():
+	# make the card sockets and other stuff enabled
+	pass
+
 func process_page_change(ID):
 	print("processing cahnge to page ",ID)
 	
@@ -85,16 +130,10 @@ func process_page_change(ID):
 		emit_signal("story_finished")
 		
 		visible = false
+		disable()
 		return
 	load_page_data(deck_card_data.pages[ID])
 	
-		# test stuff starts here
-	var test_card_data = HandCardData.new()
-	test_card_data.value_A = test_card_data.value_range_A[randi() % test_card_data.value_range_A.size()]
-	test_card_data.value_B = test_card_data.value_range_B[randi() % test_card_data.value_range_B.size()]
-	create_hand_card_ref.call_func(test_card_data)
-	
-	# test stuff ends here
 	
 	
 	pass

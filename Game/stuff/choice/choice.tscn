@@ -12,8 +12,7 @@ color = Color( 0.266667, 0.219608, 0.705882, 1 )
 script = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 64.0
-margin_right = 115.0
+margin_right = 51.0
 margin_bottom = 20.0
 size_flags_horizontal = 4
 text = "Select"
